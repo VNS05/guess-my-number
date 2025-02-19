@@ -3,7 +3,7 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
 
 html {
@@ -15,7 +15,6 @@ body {
   font-family: 'Press Start 2P', sans-serif;
   color: #eee;
   background-color: #222;
-  /* background-color: #60b347; */
 }
 
 /* LAYOUT */
@@ -31,6 +30,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
 }
 
 .left {
@@ -117,4 +117,58 @@ h1 {
 
 .label-score {
   margin-bottom: 2rem;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 3rem; /* Smaller heading on mobile */
+  }
+
+  .number {
+    font-size: 4rem; /* Smaller number display */
+    width: 10rem; /* Adjust width */
+  }
+
+  .guess {
+    font-size: 4rem; /* Smaller input font size */
+    width: 20rem; /* Adjust width */
+  }
+
+  .btn {
+    font-size: 1.5rem; /* Smaller button font size */
+    padding: 1.5rem 2rem; /* Adjust padding */
+  }
+
+  .left,
+  .right {
+    width: 100%; /* Full width on mobile */
+    text-align: center; /* Center text */
+  }
+
+  main {
+    flex-direction: column; /* Stack sections vertically */
+    align-items: center; /* Center align */
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2.5rem; /* Even smaller heading */
+  }
+
+  .number {
+    font-size: 3rem; /* Even smaller number display */
+    width: 8rem; /* Adjust width */
+  }
+
+  .guess {
+    font-size: 3rem; /* Even smaller input font size */
+    width: 90%; /* Full width with some margin */
+  }
+
+  .btn {
+    font-size: 1.2rem; /* Smaller button font size */
+    padding: 1rem 1.5rem; /* Adjust padding */
+  }
 }
